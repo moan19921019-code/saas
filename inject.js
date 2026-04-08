@@ -229,5 +229,9 @@
     localStorage.setItem('cp_author', this.value);
   });
 
+  // 页面加载时获取评论
   loadComments();
+
+  // 每 5 秒轮询检查新评论（别人发的评论也能看到）
+  setInterval(loadComments, 5000);
 })();
